@@ -11,9 +11,12 @@ function receive_money(){
     document.getElementById('digite2').value= "";
 }
 function select_country() {
+    if (document.getElementById('digite2').disabled== false){
+        dig2 = document.getElementById('digite2').value
+    }
     dig_peso = document.getElementById('digite').value
     var new_dig = 0;
-    dig2 = document.getElementById('digite2').value
+   
     country=document.buscar.lista.options[document.buscar.lista.selectedIndex].value;
     console.log(country);
     if ((country == "pen"))
@@ -37,13 +40,12 @@ function select_country() {
     if (dig_peso > 0){
         new_dig = dig_peso/(1+margen);
         var dig_dolar = (new_dig/(1.004))/757;
-
         console.log(dig_dolar);
         dig_dolar = dig_dolar/(1+spread);
         new_dig = dig_dolar/change_dolar;
         document.getElementById('digite2').value = Math.round(new_dig, -1);
     }
-    if (dig2 > 0){
+    else if (dig2 > 0){
         new_dig = dig2*change_dolar;
         new_dig = new_dig*(1+spread);
         new_dig = new_dig*757*1.004;
