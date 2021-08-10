@@ -16,7 +16,6 @@ function select_country() {
     }
     dig_peso = document.getElementById('digite').value
     var new_dig = 0;
-   
     country=document.buscar.lista.options[document.buscar.lista.selectedIndex].value;
     console.log(country);
     if ((country == "pen"))
