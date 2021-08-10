@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<style>
+    body {background-color: rgb(255, 255, 255);}
+    h1   {color: #f4b137;font-family: Monaco;font-size: 300%; text-align: center;}
+    h2   {color: #f4b137;font-family: Monaco;font-size: 200%; text-align: center;}
+    h3   {color: #f4b137;font-family: Monaco;font-size: 150%; text-align: center;}
+
+    
+    a:link { color: rgb(0, 0, 0); text-decoration: none }
+      a:visited { color: #000000; text-decoration: none}
+      a:hover { color: white; text-decoration: none}
+      a:active { color: #000000; text-decoration: none}
+      .row {
+    display: flex;
+    }
+    .topnav {
+  overflow: hidden;
+  background-color: #074f71;
+}
+.container {
+    align-content: center;
+  border-radius: 5px;
+  background-color: #e1ebf2;
+  padding: 20px;
+}
+
+.col-25 {
+    float:left;
+  margin-left: 100px;
+  margin-top: 6px;
+  padding-left: 300px;
+}
+.col-50 {
+  float: left;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  margin-top: 6px;
+}
+.col-100 {
+  float: left;
+  margin-top: 6px;
+}
+
+.btn {
+  border: none; /* Remove borders */
+  color: #054d74; /* Add a text color */
+  padding: 6px 20px; /* Add some padding */
+  cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.buscar {background-color: #f4b137;
+    float: right;
+    font-size: 20px;
+  font-family: Monaco;
+  margin-top: 40px;
+  margin-left: 8px;
+  margin-right: 1px;
+  border-radius:20px;
+  width:150px;
+  height:67px;}
+  
+.buscar:hover {background: #074f71;
+color: #f4b137;}
+
+.disabled-btn{background: #074f71;
+    font-size: 15px;
+    text-align: center;
+    white-space: normal;
+    border: none;
+  font-family: Monaco;
+  color: white; 
+  padding: 20px 20px;
+  width:200px;
+  height:67px;
+  }
+.disabled-btn:hover {background: #074f71;
+color: #f4b137;}
+
+.text {background: white;
+    border: none;
+    font-size: 20px;
+  font-family: Monaco;
+  color: #074f71; 
+  padding: 20px 20px;
+
+}
+.text:disabled{background: #cacecf;
+}
+.clp {background: white;
+    border: none;
+    font-size: 20px;
+  font-family: Monaco;
+  color: #f4b137; 
+  padding: 20px 20px;
+  width:160px;
+  height:67px;
+}
+.country {background: white;
+    border: none;
+    font-size: 20px;
+  font-family: Monaco;
+  color: #074f71; 
+  padding: 20px 20px;
+  width:160px;
+  height:67px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav{
+  color: #074f71;
+  overflow: hidden;
+  padding: 50px 500px;
+}
+
+</style>
+<head>
+    <title>Desafío CurrencyBird</title>  
+</head>
+<script src="script.js"></script>
+<body>
+<div class="topnav">
+    <img src="logo.png"> 
+</div>
+<div>
+<h1>BIENVENIDO</h1> 
+<h2>Simula aquí tu cotización </h2> 
+</div>
+<div class = "container">
+<div class="row">
+    <div class="col-25">
+    <h3>
+    <input type="button" class="disabled-btn" value="Tú envías" onClick="send_money()">
+    </h3>
+    <h3>
+    <input type="button"class="disabled-btn" value="El destinatario recibe" onClick="receive_money()">
+    </h3>
+
+    </div>  
+    <div class="col-50">
+        <h3>  
+        <form >
+            <input type="text" class="text" id="digite" disabled="">
+        </form>
+        </h3>
+        <h3> 
+        <form >
+            <input type="text" class="text" id="digite2" disabled="">
+        </form>
+        </h3>        
+    </div>
+    <div class="col-75">
+        <h3>  <input type="button" class="clp" value="CLP"> </h3>
+        <h3>  
+        <form name="buscar">
+            <select name="lista" class="country" >
+            <option value="pen">PERÚ</option>
+            <option value="cop">COLOMBIA</option>
+            <option value="brl">BRASIL</option>
+            </select>
+        <form>
+        </h3>
+    </div>  
+    <div class="col-100">
+        <h3>  
+        <input type="button"class="btn buscar" value="¡Calcular!" onClick="select_country()">
+        </h3>
+    </div> 
+</div>
+</div>
+</body>
